@@ -1,0 +1,40 @@
+enum FileContent {
+  fileName
+  mimetype
+  encoding
+}
+
+type Document {
+  id: String!
+  uuid: String!
+  docName: String!
+  permission: String!
+  files: [File]!
+}
+
+type File {
+  id: String!
+  url: String!
+  document: Document!
+  fileName: String!
+  mimetype: String!
+}
+
+input AddDocumentInput {
+  uuid: String!
+  name: String!
+  permission: String
+  files: [FileContent]!
+  description: String
+}
+
+type Query {
+  getDocs: [Document]!
+  downloadDoc(docId: String!, uuid: String!): FileContent!
+  downloadFile(docId: String!, fileId: String!, uuid: String!): FileContent!
+}
+
+type Mutation {
+  addDoc(document: AddDocumentInput!): Document!
+}
+
