@@ -17,17 +17,13 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-//    "compilerOptions": {
-//      "target": "ES6",
-//      "module": "commonjs",
-//      "strict": true,
-//      "esModuleInterop": true,
-//      "skipLibCheck": true,
-//      "forceConsistentCasingInFileNames": true,
-//      "outDir": "./dist",
-//      "rootDir": "./src"
-//    },
-//    "include": ["src/**/*.ts"],
-//    "exclude": ["node_modules"]
+    "paths": {
+      "@app/common": [
+        "libs/common/src"
+      ],
+      "@app/common/*": [
+        "libs/common/src/*"
+      ]
+    }
   }
 }
